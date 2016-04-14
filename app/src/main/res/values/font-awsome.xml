@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fa_icon_ok">&#xf00c;</string>
+    <string name="fa_icon_thumbs_up">&#xf164;</string>
+    <string name="fa_icon_angle_right">&#xf105;</string>
+    <string name="fa_icon_double_angle_right">&#xf101;</string>
+    <string name="fa_icon_user">&#xf007;</string>
+    <string name="fa_icon_list_alt">&#xf022;</string>
+
+</resources>

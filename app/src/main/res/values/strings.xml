@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">YJM</string>
+    <string name="activity_main">首页</string>
+    <string name="mine">我</string>
+    <string name="goods">商品</string>
+
+</resources>

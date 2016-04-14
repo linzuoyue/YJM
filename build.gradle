@@ -21,27 +21,3 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
-
-ext {
-    bintrayRepo = 'maven'
-    bintrayName = 'YJM'
-
-    publishedGroupId = 'com.LamChorYuet'
-    libraryName = 'YJM'
-    artifact = 'yjm'
-
-    libraryDescription = 'test'
-
-    siteUrl = 'https://github.com/linzuoyue/YJM'
-    gitUrl = 'https://github.com/linzuoyue/YJM.git'
-
-    libraryVersion = '1.0.1'
-
-    developerId = 'david'
-    developerName = 'David Wong'
-    developerEmail = 'wangd1991@gmail.com'
-
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
-}

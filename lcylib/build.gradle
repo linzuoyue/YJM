@@ -25,7 +25,7 @@ dependencies {
 }
 
 ext {
-    bintrayRepo = 'maven '
+    bintrayRepo = 'maven'
     bintrayName = 'YJM'
 
     publishedGroupId = 'com.LamChorYuet'

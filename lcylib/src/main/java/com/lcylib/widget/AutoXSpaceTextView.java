@@ -66,7 +66,7 @@ public class AutoXSpaceTextView extends TextView {
         if (content != null) {
             float textWidth = paint.measureText(content);
             width = this.getWidth();
-            Paint.FontMetrics fm = paint.getFontMetrics();// 得到系统默认字体属性
+            Paint.FontMetrics fm = paint.getFontMetrics();//  get system text property
             baseLine = getHeight() / 2 - (fm.bottom + fm.top) / 2;
         }
         paint.setTextSize(getTextSize());

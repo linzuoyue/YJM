@@ -1,16 +1,17 @@
 package com.lcylib.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
 import android.view.View;
+
+import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
 import java.util.ArrayList;
 
 /**
  * Created by lzy on 2015/8/3.
  */
-public abstract class AbstractRecyclerViewAdapter<T extends Object, VH extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<VH> {
+public abstract class AbstractRecyclerViewAdapter<T extends Object, VH extends AbstractRecyclerViewAdapter.ViewHolder> extends XRecyclerView.Adapter<VH> {
 
     private ArrayList<T> items = new ArrayList<T>();
     protected Context context;
@@ -62,7 +63,7 @@ public abstract class AbstractRecyclerViewAdapter<T extends Object, VH extends R
         }
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends XRecyclerView.ViewHolder {
         private SparseArray<View> views = new SparseArray<View>();
 
         public ViewHolder(View convertView) {

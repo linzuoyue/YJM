@@ -1,4 +1,4 @@
-package com.yjm.widget;
+package com.lcylib.widget;
 
 import android.content.Context;
 import android.graphics.Canvas;

@@ -1,11 +1,11 @@
-package com.yjm.widget;
+package com.lcylib.widget;
 
 import android.content.Context;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-import com.yjm.util.FontManager;
+import com.lcylib.util.FontManager;
 
 /**
  * Created by lzy on 2015/8/13.

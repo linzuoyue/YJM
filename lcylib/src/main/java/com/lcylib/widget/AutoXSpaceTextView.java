@@ -45,7 +45,7 @@ public class AutoXSpaceTextView extends TextView {
         paint.setColor(getCurrentTextColor());
         paint.setTypeface(Typeface.DEFAULT);
         paint.setTextSize(getTextSize());
-//        textHeight = (int) (Math.ceil(fm.descent - fm.top) + 2);// 获得字体高度
+//        textHeight = (int) (Math.ceil(fm.descent - fm.top) + 2);
         width = getWidth();
     }
 

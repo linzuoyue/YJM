@@ -32,7 +32,7 @@ ext {
     libraryName = 'YJM'
     artifact = 'lcylib'
 
-    libraryDescription = '通用工具库'
+    libraryDescription = 'personal android generic libraries toolkit'
 
     siteUrl = 'https://github.com/linzuoyue/YJM'
     gitUrl = 'https://github.com/linzuoyue/YJM.git'

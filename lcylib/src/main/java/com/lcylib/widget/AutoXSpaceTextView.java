@@ -76,17 +76,14 @@ public class AutoXSpaceTextView extends TextView {
     public void getPositions(String content) {
         this.content = content;
         char ch;
-        //输入点的 x的坐标
         float x = 0;
         float strWidth = 0;
         int count = content.length();
-        //初始化字体位置数组
         position = new float[count][2];
         for (int i = 0; i < count; i++) {
             ch = content.charAt(i);
             String str = String.valueOf(ch);
 
-            //根据画笔获得每一个字符的显示的rect 就是包围框（获得字符宽度）
             Rect rect = new Rect();
             paint.getTextBounds(str, 0, 1, rect);
             strWidth += rect.width();
@@ -99,12 +96,8 @@ public class AutoXSpaceTextView extends TextView {
         for (int i = 0; i < count; ++i) {
             ch = content.charAt(i);
             String str = String.valueOf(ch);
-
-            //根据画笔获得每一个字符的显示的rect 就是包围框（获得字符宽度）
             Rect rect = new Rect();
             paint.getTextBounds(str, 0, 1, rect);
-
-            //记录每一个字的位置
 //            x = x + rect.width() >= width ? width - rect.width() : x;
             position[i][0] = x - rect.left;
             position[i][1] = baseLine;

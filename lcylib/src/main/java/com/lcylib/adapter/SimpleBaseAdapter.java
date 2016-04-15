@@ -38,21 +38,8 @@ public abstract class SimpleBaseAdapter<T, VH extends AdapterViewHolder> extends
         return position;
     }
 
-    /**
-     * 该方法需要子类实现，需要返回item布局的resource id
-     *
-     * @return
-     */
     public abstract int getItemResource(int position);
 
-    /**
-     * 使用该getItemView方法替换原来的getView方法，需要子类实现
-     *
-     * @param position
-     * @param convertView
-     * @param holder
-     * @return
-     */
     public abstract View getItemView(int position, View convertView, VH holder);
 
     @SuppressWarnings("unchecked")

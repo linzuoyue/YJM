@@ -32,12 +32,12 @@ ext {
     libraryName = 'YJM'
     artifact = 'lcylib'
 
-    libraryDescription = 'test'
+    libraryDescription = '通用工具库'
 
     siteUrl = 'https://github.com/linzuoyue/YJM'
     gitUrl = 'https://github.com/linzuoyue/YJM.git'
 
-    libraryVersion = '1.0.1'
+    libraryVersion = '1.0.2'
 
     developerId = 'lzy'
     developerName = 'LamChorYuet'

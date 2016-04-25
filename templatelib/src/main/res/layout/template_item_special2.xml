@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/template_tem_special_bg"
+    android:paddingBottom="2dp">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        app:viewAspectRatio="1.8894473"
+        app:layout_heightPercent="52.925532%w"
+        />
+
+    <com.zhy.android.percent.support.PercentRelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:background="@drawable/template_item_special_border"
+        app:layout_heightPercent="32.978723%w"
+        app:layout_widthPercent="76.595745%w"
+        >
+
+        <TextView
+            android:id="@+id/desc1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:textColor="@android:color/white"
+            app:layout_marginTopPercent="2.430556%w"
+            app:layout_textSizePercent="3.819444%w"
+            />
+
+        <TextView
+            android:id="@+id/line"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_below="@id/desc1"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/white"
+            app:layout_marginTopPercent="3.125%w"
+            app:layout_widthPercent="16.319444%w"
+            />
+
+        <com.cmread.cmlearning.widget.AutoXSpaceTextView
+            android:id="@+id/desc2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line"
+            android:layout_centerHorizontal="true"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            app:layout_marginTopPercent="6.597222%w"
+            app:layout_textSizePercent="6.944444%w"
+            app:layout_widthPercent="68.055556%w"
+            />
+
+        <com.cmread.cmlearning.widget.AutoXSpaceTextView
+            android:id="@+id/desc3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/desc2"
+            android:layout_centerHorizontal="true"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            app:layout_marginTopPercent="4.166667%w"
+            app:layout_textSizePercent="4.166667%w"
+            app:layout_widthPercent="68.055556%w"
+            />
+
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+</com.zhy.android.percent.support.PercentFrameLayout>

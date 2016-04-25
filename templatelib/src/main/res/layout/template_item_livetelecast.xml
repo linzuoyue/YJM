@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/template_item_course_bg"
+    android:orientation="vertical"
+    >
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:viewAspectRatio="1.82105279"
+        app:roundedCornerRadius="@dimen/corner_radius"
+        app:roundTopLeft="true"
+        app:roundTopRight="true"
+        app:roundBottomLeft="false"
+        app:roundBottomRight="false"
+        />
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp"
+        android:singleLine="true"
+        android:textColor="#555555"
+        app:layout_marginTopPercent="3.468208%w"
+        app:layout_textSizePercent="8.092486%w"
+        />
+
+    <TextView
+        android:id="@+id/tv_desc3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/tv_desc"
+        android:paddingRight="7dp"
+        android:singleLine="true"
+        android:textColor="#c0cac5"
+        app:layout_marginTopPercent="4.624278%w"
+        app:layout_paddingBottomPercent="5.780347%w"
+        app:layout_textSizePercent="6.936416%w"
+        />
+
+    <TextView
+        android:id="@+id/tv_desc2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/tv_desc"
+        android:layout_toLeftOf="@id/tv_desc3"
+        android:paddingLeft="7dp"
+        android:singleLine="true"
+        android:textColor="#c0cac5"
+        app:layout_marginTopPercent="4.624278%w"
+        app:layout_paddingBottomPercent="5.780347%w"
+        app:layout_textSizePercent="6.936416%w"
+        />
+
+</com.zhy.android.percent.support.PercentRelativeLayout>

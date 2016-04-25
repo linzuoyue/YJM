@@ -63,7 +63,12 @@ public abstract class AbstractRecyclerViewAdapter<T extends Object, VH extends A
         }
     }
 
-    public class ViewHolder extends XRecyclerView.ViewHolder {
+    @Override
+    public int getItemCount() {
+        return items.size();
+    }
+
+    public static class ViewHolder extends XRecyclerView.ViewHolder {
         private SparseArray<View> views = new SparseArray<View>();
 
         public ViewHolder(View convertView) {

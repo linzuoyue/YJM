@@ -8,11 +8,7 @@ import com.facebook.drawee.backends.pipeline.Fresco;
  * Created by lzy on 2016/4/15.
  */
 public class FrescoManager {
-
-    /**
-     * initial on application
-     * @param context
-     */
+    
     public static void initialize(Context context) {
         Fresco.initialize(context);
     }

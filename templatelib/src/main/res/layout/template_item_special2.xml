@@ -47,7 +47,7 @@
             app:layout_widthPercent="16.319444%w"
             />
 
-        <com.cmread.cmlearning.widget.AutoXSpaceTextView
+        <com.lcylib.widget.AutoXSpaceTextView
             android:id="@+id/desc2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -60,7 +60,7 @@
             app:layout_widthPercent="68.055556%w"
             />
 
-        <com.cmread.cmlearning.widget.AutoXSpaceTextView
+        <com.lcylib.widget.AutoXSpaceTextView
             android:id="@+id/desc3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

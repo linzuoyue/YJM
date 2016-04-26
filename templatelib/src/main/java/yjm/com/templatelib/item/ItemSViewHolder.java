@@ -43,6 +43,7 @@ public class ItemSViewHolder extends ItemBaseViewHolder {
         int cornersRadius = DensityUtil.dip2px(context, 5);
         roundingParams.setCornersRadii(cornersRadius, cornersRadius, 0, 0);
         hierarchy.setRoundingParams(roundingParams);
+        hierarchy.setPlaceholderImage(R.drawable.transparent);
         SimpleDraweeView simpleDraweeView = new SimpleDraweeView(context, hierarchy);
         simpleDraweeView.setScaleType(SimpleDraweeView.ScaleType.CENTER_CROP);
         float aspectRationF = img.getAspectRation();

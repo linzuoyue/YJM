@@ -46,6 +46,7 @@ public class BannerHolderView extends CBPageAdapter<Item> implements Holder<Item
                 Img img = imgs.get(0);
                 GenericDraweeHierarchy hierarchy = new GenericDraweeHierarchyBuilder(context.getResources())
                         .build();
+                hierarchy.setPlaceholderImage(R.drawable.transparent);
                 SimpleDraweeView simpleDraweeView = new SimpleDraweeView(context, hierarchy);
                 ItemBaseViewHolder.addView(context, body, simpleDraweeView, img, 1f);
             }

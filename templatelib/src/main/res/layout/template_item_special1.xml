@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
         app:viewAspectRatio="2"
+        app:placeholderImage="@color/transparent"
         />
 
     <TextView

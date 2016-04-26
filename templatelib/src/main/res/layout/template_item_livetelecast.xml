@@ -18,6 +18,7 @@
         app:roundTopRight="true"
         app:roundBottomLeft="false"
         app:roundBottomRight="false"
+        app:placeholderImage="@color/transparent"
         />
 
     <TextView

@@ -39,7 +39,7 @@ public class ItemSViewHolder extends ItemBaseViewHolder {
     protected void addView(Img img) {
         GenericDraweeHierarchy hierarchy = new GenericDraweeHierarchyBuilder(context.getResources())
                 .build();
-        RoundingParams roundingParams = hierarchy.getRoundingParams();
+        RoundingParams roundingParams = new RoundingParams();
         int cornersRadius = DensityUtil.dip2px(context, 5);
         roundingParams.setCornersRadii(cornersRadius, cornersRadius, 0, 0);
         hierarchy.setRoundingParams(roundingParams);

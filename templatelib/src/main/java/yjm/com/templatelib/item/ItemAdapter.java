@@ -18,7 +18,6 @@ import yjm.com.templatelib.bean.Item;
  */
 public class ItemAdapter extends SimpleBaseAdapter<Item, ItemBaseViewHolder> implements AdapterView.OnItemClickListener {
 
-    protected int itemResource;
     private HashMap<String, View> views = new HashMap<>();
     //防止position=0的view因为计算高度而多次initial
     private boolean first = true;
@@ -50,13 +49,10 @@ public class ItemAdapter extends SimpleBaseAdapter<Item, ItemBaseViewHolder> imp
         ItemBaseViewHolder holder;
         Item item = getItem(position);
         convertView = views.get(item.getStyle() + position);
-        if (first) {
+        if (first)
             firstPosition = position;
-        } else {
-            if (firstPosition == position && convertView != null)
-                return convertView;
-        }
-//        Log.e("lzy", "position=" + position);
+        else if (firstPosition == position && convertView != null)
+            return convertView;
         if (null == convertView) {
             convertView = View.inflate(context, getItemResource(position), null);
             holder = ItemBaseViewHolder.create(context, convertView, getItemViewType(position));
@@ -65,9 +61,9 @@ public class ItemAdapter extends SimpleBaseAdapter<Item, ItemBaseViewHolder> imp
 //            Log.e("lzy", "getView: " + position);
         } else {
             holder = (ItemBaseViewHolder) convertView.getTag();
+//            Log.e("lzy", "position=" + position);
         }
-        if (first)
-            first = false;
+        first = false;
         return getItemView(position, convertView, holder);
     }
 
@@ -100,6 +96,7 @@ public class ItemAdapter extends SimpleBaseAdapter<Item, ItemBaseViewHolder> imp
     @Override
     public void notifyDataSetChanged() {
         first = true;
+        firstPosition = -1;
         super.notifyDataSetChanged();
     }
 }

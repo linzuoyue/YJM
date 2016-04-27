@@ -3,7 +3,6 @@ package yjm.com.templatelib.template;
 import android.content.Context;
 import android.support.v4.view.ViewPager;
 import android.view.View;
-import android.widget.RelativeLayout;
 
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
@@ -31,6 +30,7 @@ import yjm.com.templatelib.item.BannerHolderView;
 public class BannerViewHolder extends TemplateBaseViewHolder {
 
     private ConvenientBanner convenientBanner;
+    private float aspectRation = 0.3f;
 
     public BannerViewHolder(Context context, View convertView, ClickListener clickListener) {
         super(context, convertView, clickListener);
@@ -45,17 +45,17 @@ public class BannerViewHolder extends TemplateBaseViewHolder {
             TExtraBanner extraBanner = GsonUtil.fromJson(template.getExtra(), TExtraBanner.class);
             if (extraBanner != null) {
                 myPercentRelativeLayoutParams.setMargins(DensityUtil.dip2px(context, extraBanner.getMarginLeft()), DensityUtil.dip2px(context, extraBanner.getMarginTop()), DensityUtil.dip2px(context, extraBanner.getMarginRight()), DensityUtil.dip2px(context, extraBanner.getMarginBottom()));
-                percentLayoutInfo.heightPercent = new PercentLayoutHelper.PercentLayoutInfo.PercentVal(1 / extraBanner.getAspectRation(), true);
+                aspectRation = extraBanner.getAspectRation();
+                percentLayoutInfo.heightPercent = new PercentLayoutHelper.PercentLayoutInfo.PercentVal(1 / aspectRation, true);
             } else
-                percentLayoutInfo.heightPercent = new PercentLayoutHelper.PercentLayoutInfo.PercentVal(0.3f, true);
+                percentLayoutInfo.heightPercent = new PercentLayoutHelper.PercentLayoutInfo.PercentVal(aspectRation, true);
         } else {
-            percentLayoutInfo.heightPercent = new PercentLayoutHelper.PercentLayoutInfo.PercentVal(0.3f, true);
+            percentLayoutInfo.heightPercent = new PercentLayoutHelper.PercentLayoutInfo.PercentVal(aspectRation, true);
         }
         myPercentRelativeLayoutParams.width = MyPercentLinearLayoutLayoutParams.MATCH_PARENT;
         myPercentRelativeLayoutParams.height = 0;
         convenientBanner.setLayoutParams(myPercentRelativeLayoutParams);
-        CBLoopViewPager viewPager = getView(com.bigkoo.convenientbanner.R.id.cbLoopViewPager);
-        RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) viewPager.getLayoutParams();
+        CBLoopViewPager viewPager = convenientBanner.getViewPager();
         viewPager.clearOnPageChangeListeners();
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -70,6 +70,8 @@ public class BannerViewHolder extends TemplateBaseViewHolder {
 
             @Override
             public void onPageScrollStateChanged(int state) {
+                if (scrollListener == null)
+                    return;
                 if (state == ViewPager.SCROLL_STATE_IDLE || state == ViewPager.SCROLL_STATE_SETTLING)
                     scrollListener.onChildScrollEnd();
                 else
@@ -77,22 +79,20 @@ public class BannerViewHolder extends TemplateBaseViewHolder {
             }
         });
         final ArrayList<Item> items = template.getItems();
-        if (items != null && items.size() > 0)
-            convenientBanner.setPages(new CBViewHolderCreator<BannerHolderView>() {
+        convenientBanner.setPages(new CBViewHolderCreator<BannerHolderView>() {
                 @Override
                 public BannerHolderView createHolder() {
-                    return new BannerHolderView(this, items);
+                    return new BannerHolderView(this, items, aspectRation);
                 }
             }, items).setOnItemClickListener(new OnItemClickListener() {
-                @Override
-                public void onItemClick(int i) {
-                    final String href = items.get(i).getHref();
-                    clickListener.onClick(href);
-                }
-            });
+            @Override
+            public void onItemClick(int i) {
+                final String href = items.get(i).getHref();
+                clickListener.onClick(href);
+            }
+        });
         if (items.size() > 1) {
             convenientBanner.setCanLoop(true);
-            convenientBanner.startTurning(5000);
             convenientBanner.setPageIndicator(new int[]{R.drawable.banner_point_nor, R.drawable.banner_point_hover}).setPageIndicatorAlign(ConvenientBanner.PageIndicatorAlign.ALIGN_PARENT_RIGHT);
         } else {
             convenientBanner.setCanLoop(false);
@@ -110,7 +110,9 @@ public class BannerViewHolder extends TemplateBaseViewHolder {
     @Override
     public void onViewAttachedToWindow() {
         super.onViewAttachedToWindow();
-        if (convenientBanner != null)
+        if (convenientBanner != null) {
+            convenientBanner.stopTurning();
             convenientBanner.startTurning(5000);
+        }
     }
 }

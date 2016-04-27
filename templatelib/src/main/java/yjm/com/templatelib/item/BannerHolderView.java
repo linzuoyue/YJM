@@ -25,9 +25,11 @@ import yjm.com.templatelib.bean.Item;
 public class BannerHolderView extends CBPageAdapter<Item> implements Holder<Item> {
     private View view;
     private ViewGroup body;
+    private float aspectRation;
 
-    public BannerHolderView(CBViewHolderCreator holderCreator, List<Item> datas) {
+    public BannerHolderView(CBViewHolderCreator holderCreator, List<Item> datas, float aspectRation) {
         super(holderCreator, datas);
+        this.aspectRation = aspectRation;
     }
 
     @Override
@@ -48,7 +50,7 @@ public class BannerHolderView extends CBPageAdapter<Item> implements Holder<Item
                         .build();
                 hierarchy.setPlaceholderImage(R.drawable.transparent);
                 SimpleDraweeView simpleDraweeView = new SimpleDraweeView(context, hierarchy);
-                ItemBaseViewHolder.addView(context, body, simpleDraweeView, img, 1f);
+                ItemBaseViewHolder.addView(context, body, simpleDraweeView, img, aspectRation);
             }
         } catch (Exception e) {
             e.printStackTrace();

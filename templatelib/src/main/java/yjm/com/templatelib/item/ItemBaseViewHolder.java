@@ -6,13 +6,12 @@ import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.lcylib.Percent.MyPercentLinearLayoutLayoutParams;
 import com.lcylib.adapter.AdapterViewHolder;
-import com.zhy.android.percent.support.PercentLayoutHelper;
-import com.zhy.android.percent.support.PercentLinearLayout;
 
 import yjm.com.templatelib.R;
 import yjm.com.templatelib.bean.Img;
@@ -98,6 +97,8 @@ public abstract class ItemBaseViewHolder extends AdapterViewHolder {
      * @param aspectRatio
      */
     protected static void addView(@NonNull Context context, @NonNull ViewGroup body, SimpleDraweeView imageView, @NonNull Img img, float aspectRatio) {
+        MyPercentLinearLayoutLayoutParams layoutParams = new MyPercentLinearLayoutLayoutParams(MyPercentLinearLayoutLayoutParams.MATCH_PARENT, MyPercentLinearLayoutLayoutParams.WRAP_CONTENT);
+        imageView.setLayoutParams(layoutParams);
         imageView.setAspectRatio(aspectRatio);
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         body.addView(imageView);
@@ -111,9 +112,7 @@ public abstract class ItemBaseViewHolder extends AdapterViewHolder {
 
     protected static void addView(Context context, ViewGroup body, Title title) {
         TextView textView = new TextView(context);
-        MyPercentLinearLayoutLayoutParams layoutParams = new MyPercentLinearLayoutLayoutParams(0, PercentLinearLayout.LayoutParams.WRAP_CONTENT);
-        PercentLayoutHelper.PercentLayoutInfo percentLayoutInfo = layoutParams.getPercentLayoutInfo();
-        percentLayoutInfo.widthPercent = new PercentLayoutHelper.PercentLayoutInfo.PercentVal(1, true);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         textView.setText(title.getValueDesc());
         textView.setLines(1);
         textView.setLayoutParams(layoutParams);

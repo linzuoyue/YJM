@@ -48,14 +48,11 @@ public class ListViewHolder extends TemplateBaseViewHolder {
             gridView.setVerticalSpacing(0);
         }
         ItemAdapter templateAdapter = (ItemAdapter) gridView.getAdapter();
-        if (templateAdapter == null) {
+        if (templateAdapter == null)
             templateAdapter = ItemAdapter.createTemplateAdapter(context, template.getItems(), clickListener);
-            if (templateAdapter != null) {
-                gridView.setAdapter(templateAdapter);
-                gridView.setOnItemClickListener(templateAdapter);
-            }
-        } else {
+        else
             templateAdapter.replaceAll(template.getItems());
-        }
+        gridView.setAdapter(templateAdapter);
+        gridView.setOnItemClickListener(templateAdapter);
     }
 }

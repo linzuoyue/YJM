@@ -30,6 +30,7 @@ public class GridViewHolder extends TemplateBaseViewHolder {
     @Override
     public void initialUI(ScrollListener scrollListener, Template template) throws Exception {
         ExpandGridView gridView = getView(R.id.grid);
+        gridView.setEnabled(false);
         ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) gridView.getLayoutParams();
         TExtraGrid extraGrid = GsonUtil.fromJson(template.getExtra(), TExtraGrid.class);
         if (extraGrid != null) {

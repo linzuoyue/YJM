@@ -48,15 +48,17 @@ public class ItemAdapter extends SimpleBaseAdapter<Item, ItemBaseViewHolder> imp
     public View getView(int position, View convertView, ViewGroup parent) {
         ItemBaseViewHolder holder;
         Item item = getItem(position);
-        convertView = views.get(item.getStyle() + position);
+        View tempView = views.get(item.getStyle() + position);
         if (first)
             firstPosition = position;
         else if (firstPosition == position && convertView != null)
             return convertView;
+        else convertView = tempView;
         if (null == convertView) {
             convertView = View.inflate(context, getItemResource(position), null);
             holder = ItemBaseViewHolder.create(context, convertView, getItemViewType(position));
             convertView.setTag(holder);
+            if (position > 0)
             views.put(item.getStyle() + position, convertView);
 //            Log.e("lzy", "getView: " + position);
         } else {

@@ -3,7 +3,6 @@ package yjm.com.templatelib.item;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 
 import com.lcylib.adapter.SimpleBaseAdapter;
 
@@ -16,7 +15,7 @@ import yjm.com.templatelib.bean.Item;
 /**
  * Created by lzy on 2015/9/22.
  */
-public class ItemAdapter extends SimpleBaseAdapter<Item, ItemBaseViewHolder> implements AdapterView.OnItemClickListener {
+public class ItemAdapter extends SimpleBaseAdapter<Item, ItemBaseViewHolder> {
 
     private HashMap<String, View> views = new HashMap<>();
     //防止position=0的view因为计算高度而多次initial
@@ -45,7 +44,7 @@ public class ItemAdapter extends SimpleBaseAdapter<Item, ItemBaseViewHolder> imp
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         ItemBaseViewHolder holder;
         Item item = getItem(position);
         View tempView = views.get(item.getStyle() + position);
@@ -60,6 +59,14 @@ public class ItemAdapter extends SimpleBaseAdapter<Item, ItemBaseViewHolder> imp
             convertView.setTag(holder);
             if (position > 0)
             views.put(item.getStyle() + position, convertView);
+            convertView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Item item = getItem(position);
+                    String url = item.getHref();
+                    clickListener.onClick(url);
+                }
+            });
 //            Log.e("lzy", "getView: " + position);
         } else {
             holder = (ItemBaseViewHolder) convertView.getTag();
@@ -77,13 +84,6 @@ public class ItemAdapter extends SimpleBaseAdapter<Item, ItemBaseViewHolder> imp
             e.printStackTrace();
         }
         return convertView;
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Item item = getItem(position);
-        String url = item.getHref();
-        clickListener.onClick(url);
     }
 
     public static ItemAdapter createTemplateAdapter(Context context, List<Item> data, ClickListener clickListener) {

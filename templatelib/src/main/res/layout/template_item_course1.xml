@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.android.percent.support.PercentRelativeLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -12,13 +12,13 @@
         android:id="@+id/img"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:viewAspectRatio="1.82105279"
-        app:roundedCornerRadius="@dimen/corner_radius"
-        app:roundTopLeft="true"
-        app:roundTopRight="true"
+        app:placeholderImage="@color/transparent"
         app:roundBottomLeft="false"
         app:roundBottomRight="false"
-        app:placeholderImage="@color/transparent"
+        app:roundTopLeft="true"
+        app:roundTopRight="true"
+        app:roundedCornerRadius="@dimen/corner_radius"
+        app:viewAspectRatio="1.82105279"
         />
 
     <TextView
@@ -26,12 +26,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/img"
+        android:layout_marginTop="6dp"
         android:paddingLeft="7dp"
         android:paddingRight="7dp"
         android:singleLine="true"
+        android:text="11111111"
         android:textColor="#555555"
-        app:layout_marginTopPercent="3.468208%w"
-        app:layout_textSizePercent="8.092486%w"
+        android:textSize="14sp"
         />
 
     <TextView
@@ -40,14 +41,16 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_below="@id/tv_desc"
+        android:layout_marginTop="8dp"
+        android:drawableLeft="@drawable/ic_lesson_learning_count"
+        android:drawablePadding="2dp"
+        android:gravity="center_vertical"
+        android:paddingBottom="9dp"
         android:paddingRight="7dp"
         android:singleLine="true"
-        android:drawablePadding="2dp"
-        android:drawableLeft="@drawable/ic_lesson_learning_count"
+        android:text="11111111"
         android:textColor="#c0cac5"
-        app:layout_marginTopPercent="4.624278%w"
-        app:layout_paddingBottomPercent="5.780347%w"
-        app:layout_textSizePercent="6.936416%w"
+        android:textSize="12sp"
         />
 
     <TextView
@@ -56,13 +59,15 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@id/tv_desc"
+        android:layout_marginTop="8dp"
         android:layout_toLeftOf="@id/tv_member"
+        android:gravity="center_vertical"
+        android:paddingBottom="9dp"
         android:paddingLeft="7dp"
         android:singleLine="true"
+        android:text="11111111"
         android:textColor="#c0cac5"
-        app:layout_marginTopPercent="4.624278%w"
-        app:layout_paddingBottomPercent="5.780347%w"
-        app:layout_textSizePercent="6.936416%w"
+        android:textSize="12sp"
         />
 
-</com.zhy.android.percent.support.PercentRelativeLayout>
+</RelativeLayout>

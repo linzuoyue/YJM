@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.lcylib.util.GsonUtil;
 import com.yjm.R;
@@ -34,7 +35,7 @@ public class MineFragment extends BaseFragment {
         TemplateAdapter templateAdapter = new TemplateAdapter(getContext(), new ClickListener() {
             @Override
             public void onClick(String href) {
-
+                Toast.makeText(getContext(), href, Toast.LENGTH_LONG).show();
             }
         });
         templateAdapter.setData(templateSet.getData());

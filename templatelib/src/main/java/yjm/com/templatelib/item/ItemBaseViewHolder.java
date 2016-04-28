@@ -90,14 +90,13 @@ public abstract class ItemBaseViewHolder extends AdapterViewHolder {
     }
 
     /**
-     * @param context
      * @param body
      * @param imageView
      * @param img
      * @param aspectRatio
      */
-    protected static void addView(@NonNull Context context, @NonNull ViewGroup body, SimpleDraweeView imageView, @NonNull Img img, float aspectRatio) {
-        MyPercentLinearLayoutLayoutParams layoutParams = new MyPercentLinearLayoutLayoutParams(MyPercentLinearLayoutLayoutParams.MATCH_PARENT, MyPercentLinearLayoutLayoutParams.WRAP_CONTENT);
+    protected static void addView(@NonNull ViewGroup body, SimpleDraweeView imageView, @NonNull Img img, float aspectRatio) {
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(MyPercentLinearLayoutLayoutParams.MATCH_PARENT, MyPercentLinearLayoutLayoutParams.WRAP_CONTENT);
         imageView.setLayoutParams(layoutParams);
         imageView.setAspectRatio(aspectRatio);
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);

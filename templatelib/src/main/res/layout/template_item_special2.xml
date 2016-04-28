@@ -12,66 +12,118 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
-        app:viewAspectRatio="1.8894473"
         app:placeholderImage="@color/transparent"
+        app:viewAspectRatio="1.8894473"
         />
 
-    <com.zhy.android.percent.support.PercentRelativeLayout
+    <LinearLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
         android:layout_gravity="center"
         android:background="@drawable/template_item_special_border"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
         app:layout_heightPercent="32.978723%w"
         app:layout_widthPercent="76.595745%w"
+        android:weightSum="4"
         >
 
         <TextView
             android:id="@+id/desc1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_weight="1"
             android:textColor="@android:color/white"
-            app:layout_marginTopPercent="2.430556%w"
-            app:layout_textSizePercent="3.819444%w"
+            android:textSize="11sp"
             />
 
         <TextView
             android:id="@+id/line"
-            android:layout_width="0dp"
+            android:layout_width="50dp"
             android:layout_height="1dp"
-            android:layout_below="@id/desc1"
-            android:layout_centerHorizontal="true"
             android:background="@android:color/white"
-            app:layout_marginTopPercent="3.125%w"
-            app:layout_widthPercent="16.319444%w"
             />
 
         <com.lcylib.widget.AutoXSpaceTextView
             android:id="@+id/desc2"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/line"
-            android:layout_centerHorizontal="true"
             android:singleLine="true"
+            android:layout_weight="2"
             android:textColor="@android:color/white"
-            app:layout_marginTopPercent="6.597222%w"
-            app:layout_textSizePercent="6.944444%w"
-            app:layout_widthPercent="68.055556%w"
+            android:textSize="20sp"
             />
 
         <com.lcylib.widget.AutoXSpaceTextView
             android:id="@+id/desc3"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/desc2"
-            android:layout_centerHorizontal="true"
             android:singleLine="true"
             android:textColor="@android:color/white"
-            app:layout_marginTopPercent="4.166667%w"
-            app:layout_textSizePercent="4.166667%w"
-            app:layout_widthPercent="68.055556%w"
+            android:textSize="12sp"
             />
 
-    </com.zhy.android.percent.support.PercentRelativeLayout>
+    </LinearLayout>
+
+    <!--<com.zhy.android.percent.support.PercentRelativeLayout-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:background="@drawable/template_item_special_border"-->
+    <!--app:layout_heightPercent="32.978723%w"-->
+    <!--app:layout_widthPercent="76.595745%w"-->
+    <!--&gt;-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/desc1"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:textColor="@android:color/white"-->
+    <!--app:layout_marginTopPercent="2.430556%w"-->
+    <!--app:layout_textSizePercent="3.819444%w"-->
+    <!--/>-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/line"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="1dp"-->
+    <!--android:layout_below="@id/desc1"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:background="@android:color/white"-->
+    <!--app:layout_marginTopPercent="3.125%w"-->
+    <!--app:layout_widthPercent="16.319444%w"-->
+    <!--/>-->
+
+    <!--<com.lcylib.widget.AutoXSpaceTextView-->
+    <!--android:id="@+id/desc2"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_below="@id/line"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:singleLine="true"-->
+    <!--android:textColor="@android:color/white"-->
+    <!--app:layout_marginTopPercent="6.597222%w"-->
+    <!--app:layout_textSizePercent="6.944444%w"-->
+    <!--app:layout_widthPercent="68.055556%w"-->
+    <!--/>-->
+
+    <!--<com.lcylib.widget.AutoXSpaceTextView-->
+    <!--android:id="@+id/desc3"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_below="@id/desc2"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:singleLine="true"-->
+    <!--android:textColor="@android:color/white"-->
+    <!--app:layout_marginTopPercent="4.166667%w"-->
+    <!--app:layout_textSizePercent="4.166667%w"-->
+    <!--app:layout_widthPercent="68.055556%w"-->
+    <!--/>-->
+
+    <!--</com.zhy.android.percent.support.PercentRelativeLayout>-->
 </com.zhy.android.percent.support.PercentFrameLayout>

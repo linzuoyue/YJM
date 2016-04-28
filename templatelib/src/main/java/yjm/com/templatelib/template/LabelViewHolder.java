@@ -2,11 +2,11 @@ package yjm.com.templatelib.template;
 
 import android.content.Context;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.lcylib.util.DensityUtil;
 import com.lcylib.util.GsonUtil;
-import com.zhy.android.percent.support.PercentRelativeLayout;
 
 import java.util.ArrayList;
 
@@ -34,7 +34,7 @@ public class LabelViewHolder extends TemplateBaseViewHolder {
         final Item item = template.getItems().get(0);
         if (template.getType().equals(Template.TYPE_LABEL)) {
             TExtraLabel extraLabel = GsonUtil.fromJson(template.getExtra(), TExtraLabel.class);
-            PercentRelativeLayout prl = getView(R.id.item);
+            RelativeLayout prl = getView(R.id.item);
             if (extraLabel != null) {
                 prl.setPadding(DensityUtil.dip2px(context, extraLabel.getMarginLeft()), DensityUtil.dip2px(context, extraLabel.getMarginTop()), DensityUtil.dip2px(context, extraLabel.getMarginRight()), DensityUtil.dip2px(context, extraLabel.getMarginBottom()));
             } else {

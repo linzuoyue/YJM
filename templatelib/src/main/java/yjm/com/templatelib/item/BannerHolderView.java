@@ -50,7 +50,7 @@ public class BannerHolderView extends CBPageAdapter<Item> implements Holder<Item
                         .build();
                 hierarchy.setPlaceholderImage(R.drawable.transparent);
                 SimpleDraweeView simpleDraweeView = new SimpleDraweeView(context, hierarchy);
-                ItemBaseViewHolder.addView(context, body, simpleDraweeView, img, aspectRation);
+                ItemBaseViewHolder.addView(body, simpleDraweeView, img, aspectRation);
             }
         } catch (Exception e) {
             e.printStackTrace();

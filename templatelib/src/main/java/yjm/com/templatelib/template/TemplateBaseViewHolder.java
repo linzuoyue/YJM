@@ -57,11 +57,11 @@ public abstract class TemplateBaseViewHolder extends AbstractRecyclerViewAdapter
         if (viewType == ITEM_TYPE_BANNER)
             return new BannerViewHolder(context, convertView, clickListener);
         else if (viewType == ITEM_TYPE_GRID)
-            return new GridViewHolder(context, convertView,clickListener);
+            return new GridViewHolder(context, convertView, clickListener);
         else if (viewType == ITEM_TYPE_LIST)
-            return new ListViewHolder(context, convertView,clickListener);
+            return new ListViewHolder(context, convertView, clickListener);
         else if (viewType == ITEM_TYPE_LABEL)
-            return new LabelViewHolder(context, convertView,clickListener);
+            return new LabelViewHolder(context, convertView, clickListener);
         return new TemplateBaseViewHolder(context, convertView, clickListener) {
             @Override
             public void initialUI(ScrollListener scrollListener, Template template) throws Exception {

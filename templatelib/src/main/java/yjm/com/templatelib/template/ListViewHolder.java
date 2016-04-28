@@ -54,6 +54,5 @@ public class ListViewHolder extends TemplateBaseViewHolder {
         else
             templateAdapter.replaceAll(template.getItems());
         gridView.setAdapter(templateAdapter);
-        gridView.setOnItemClickListener(templateAdapter);
     }
 }

@@ -41,7 +41,7 @@ public class ItemSViewHolder extends ItemBaseViewHolder {
                 .build();
         RoundingParams roundingParams = new RoundingParams();
         int cornersRadius = DensityUtil.dip2px(context, 5);
-        roundingParams.setCornersRadii(cornersRadius, cornersRadius, 0, 0);
+        roundingParams.setCornersRadius(cornersRadius);
         hierarchy.setRoundingParams(roundingParams);
         hierarchy.setPlaceholderImage(R.drawable.transparent);
         SimpleDraweeView simpleDraweeView = new SimpleDraweeView(context, hierarchy);
@@ -51,6 +51,6 @@ public class ItemSViewHolder extends ItemBaseViewHolder {
             aspectRationF = 1.82105279f;
         else if (aspectRationF < 0f)
             aspectRationF = 1f;
-        addView(context, (ViewGroup) getView(R.id.body), simpleDraweeView, img, aspectRationF);
+        addView((ViewGroup) getView(R.id.body), simpleDraweeView, img, aspectRationF);
     }
 }

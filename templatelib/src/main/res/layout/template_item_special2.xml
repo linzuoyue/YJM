@@ -12,7 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
-        app:placeholderImage="@color/transparent"
+        app:failureImage="@drawable/ic_image_default"
+        app:failureImageScaleType="centerCrop"
+        app:placeholderImage="@drawable/ic_image_default"
         app:viewAspectRatio="1.8894473"
         />
 

@@ -12,13 +12,15 @@
         android:id="@+id/img"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:failureImage="@drawable/ic_image_default"
+        app:failureImageScaleType="centerCrop"
         app:viewAspectRatio="3.00847518"
         app:roundedCornerRadius="@dimen/corner_radius"
         app:roundTopLeft="true"
         app:roundTopRight="true"
         app:roundBottomLeft="false"
         app:roundBottomRight="false"
-        app:placeholderImage="@color/transparent"
+        app:placeholderImage="@drawable/ic_image_default"
         />
 
     <TextView

@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import com.bigkoo.convenientbanner.adapter.CBPageAdapter;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.bigkoo.convenientbanner.holder.Holder;
+import com.facebook.drawee.drawable.ScalingUtils;
 import com.facebook.drawee.generic.GenericDraweeHierarchy;
 import com.facebook.drawee.generic.GenericDraweeHierarchyBuilder;
 import com.facebook.drawee.view.SimpleDraweeView;
@@ -49,6 +50,7 @@ public class BannerHolderView extends CBPageAdapter<Item> implements Holder<Item
                 GenericDraweeHierarchy hierarchy = new GenericDraweeHierarchyBuilder(context.getResources())
                         .build();
                 hierarchy.setPlaceholderImage(R.drawable.transparent);
+                hierarchy.setFailureImage(context.getResources().getDrawable(R.drawable.ic_image_default), ScalingUtils.ScaleType.CENTER_CROP);
                 SimpleDraweeView simpleDraweeView = new SimpleDraweeView(context, hierarchy);
                 ItemBaseViewHolder.addView(body, simpleDraweeView, img, aspectRation);
             }

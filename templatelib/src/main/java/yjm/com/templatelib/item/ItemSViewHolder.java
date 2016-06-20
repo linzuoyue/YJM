@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.facebook.drawee.drawable.ScalingUtils;
 import com.facebook.drawee.generic.GenericDraweeHierarchy;
 import com.facebook.drawee.generic.GenericDraweeHierarchyBuilder;
 import com.facebook.drawee.generic.RoundingParams;
@@ -43,7 +44,8 @@ public class ItemSViewHolder extends ItemBaseViewHolder {
         int cornersRadius = DensityUtil.dip2px(context, 5);
         roundingParams.setCornersRadius(cornersRadius);
         hierarchy.setRoundingParams(roundingParams);
-        hierarchy.setPlaceholderImage(R.drawable.transparent);
+        hierarchy.setPlaceholderImage(R.drawable.ic_image_default);
+        hierarchy.setFailureImage(context.getResources().getDrawable(R.drawable.ic_image_default), ScalingUtils.ScaleType.CENTER_CROP);
         SimpleDraweeView simpleDraweeView = new SimpleDraweeView(context, hierarchy);
         simpleDraweeView.setScaleType(SimpleDraweeView.ScaleType.CENTER_CROP);
         float aspectRationF = img.getAspectRation();
